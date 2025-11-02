@@ -7,6 +7,7 @@ import { Providers } from "./providers"; // Import Providers
 import CookieBanner from "@/components/CookieBanner";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AuthStatus from '@/components/AuthStatus'; // Import AuthStatus
 
 
 
@@ -64,6 +65,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <AuthStatus /> {/* Render AuthStatus */}
         </Providers>
         <CookieBanner />
       </body>
