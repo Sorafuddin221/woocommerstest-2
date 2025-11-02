@@ -43,7 +43,7 @@ export async function POST(req) {
       },
     });
 
-    return NextResponse.json({ id: stripeSession.id });
+    return NextResponse.json({ url: stripeSession.url });
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }

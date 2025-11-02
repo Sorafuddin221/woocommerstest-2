@@ -82,15 +82,8 @@ export default function CheckoutPage() {
             body: JSON.stringify({ orderId: data._id }),
           });
           const stripeData = await stripeRes.json();
-          const { loadStripe } = await import('@stripe/stripe-js');
-          const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-          if (!stripePublishableKey) {
-            console.error('Stripe publishable key is not defined.');
-            return;
-          }
-          const stripe = await loadStripe(stripePublishableKey);
-          if (stripe) {
-            stripe.redirectToCheckout({ sessionId: stripeData.id });
+          if (stripeData.url) {
+            window.location.href = stripeData.url;
           }
         } else {
           router.push(`/orders/${data._id}`);
