@@ -76,10 +76,10 @@ export default function OrderDetailsPage() {
         <p><strong>Payment Status:</strong> {order.isPaid ? `Paid at ${new Date(order.paidAt).toLocaleString()}` : 'Not Paid'}</p>
         <p><strong>Delivery Status:</strong> {order.isDelivered ? `Delivered at ${new Date(order.deliveredAt).toLocaleString()}` : 'Not Delivered'}</p>
         
-        <h2 class="text-xl font-bold mt-6 mb-4">Shipping Address</h2>
+        <h2 className="text-xl font-bold mt-6 mb-4">Shipping Address</h2>
         <p>{order.shippingAddress.address}, {order.shippingAddress.city}, {order.shippingAddress.postalCode}, {order.shippingAddress.country}</p>
 
-        <h2 class="text-xl font-bold mt-6 mb-4">Order Items</h2>
+        <h2 className="text-xl font-bold mt-6 mb-4">Order Items</h2>
         <ul>
           {order.items.map((item, index) => (
             <li key={index} className="border-b py-2">
